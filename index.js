@@ -42,15 +42,23 @@ function setControllers() {
 
 function onControlsClick(direction) {
     if (direction === CONTROLS_DOWN) {
-        counter = (counter + 1) % slidesNumber;
+        counter++;
+        if (counter === slidesNumber) {
+            counter = 0;
+        }
+
+        console.log('down', counter);
         
         sidebarContainer.style.transform = `translateY(-${counter * 100}vh)`;
         slidesContainer.style.transform = `translateY(${counter * 100}vh)`;
     } else {
-        counter = (counter - 1) % slidesNumber;
+        counter--;
+        if (counter < 0) {
+            counter = slidesNumber - 1;
+        }
 
-        sidebarContainer.style.transform = `translateY(-${Math.abs(counter) * 100}vh)`;
-        slidesContainer.style.transform = `translateY(${Math.abs(counter) * 100}vh)`;
+        sidebarContainer.style.transform = `translateY(-${counter * 100}vh)`;
+        slidesContainer.style.transform = `translateY(${counter * 100}vh)`;
     }
 }
 
