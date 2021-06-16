@@ -49,8 +49,8 @@ function onControlsClick(direction) {
     } else {
         counter = (counter - 1) % slidesNumber;
 
-        sidebarContainer.style.transform = `translateY(-${counter === 0 ? 0 : (slidesNumber + counter) * 100}vh)`;
-        slidesContainer.style.transform = `translateY(${counter === 0 ? 0 : (slidesNumber + counter) * 100}vh)`;
+        sidebarContainer.style.transform = `translateY(-${Math.abs(counter) * 100}vh)`;
+        slidesContainer.style.transform = `translateY(${Math.abs(counter) * 100}vh)`;
     }
 }
 
