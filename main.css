@@ -1,0 +1,95 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 45%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides-container {
+    width: 55%;
+    position: absolute;
+    top: 0;
+    left: 45%;
+
+    transition: transform 0.5s ease-in-out;
+}
+
+.item {
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    
+    align-items: center;
+    padding: 0 60px;
+    line-height: 1.5rem;
+}
+
+.item__title {
+    margin: 0;
+    margin-bottom: 40px;
+    font-size: bold;
+}
+
+.item_active {
+    display: flex;
+}
+
+.slide {
+    height: 100vh;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.controls {
+    margin-top: -20px;
+}
+
+.controls button {
+    height: 40px;
+    width: 40px;
+    border: none;
+    background-color: rgba(200, 200, 200, 0.5);
+    color: black;
+}
+
+.controls button:hover {
+    background-color: rgba(200, 200, 200, 1);
+}
+
+.controls .down-button {
+    transform: translateY(-100%);
+    border-radius: 5px 0 0 5px;
+    
+    position: absolute;
+    top: 50%;
+    left: calc(45% - 40px);
+}
+
+.controls .up-button {
+    transform: translateY(-100%);
+    border-radius: 0 5px 5px 0;
+
+    position: absolute;
+    bottom: 50%;
+    left: 45%;
+}
